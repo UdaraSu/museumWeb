@@ -14,6 +14,7 @@
   var scrollBar = document.getElementById("scroll-progress-bar");
   var metaTheme = document.getElementById("meta-theme-color");
   var milestoneSelect = document.getElementById("milestone-select");
+  var subMenuParents = document.querySelectorAll(".has-sub");
 
   var THEME_KEY = "museum-research-theme";
   var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -80,6 +81,11 @@
     navToggle.setAttribute("aria-expanded", "false");
     navToggle.setAttribute("aria-label", "Open menu");
     document.body.style.overflow = "";
+    subMenuParents.forEach(function (item) {
+      item.classList.remove("is-open");
+      var trigger = item.querySelector(":scope > a");
+      if (trigger) trigger.setAttribute("aria-expanded", "false");
+    });
   }
 
   function openMobileNav() {
@@ -102,7 +108,23 @@
 
     nav.addEventListener("click", function (e) {
       var t = e.target;
-      if (t.closest && t.closest('a[href^="#"]')) {
+      var clickedLink = t.closest && t.closest('a[href^="#"]');
+      if (!clickedLink) return;
+
+      var parentItem = clickedLink.parentElement;
+      var isSubmenuTrigger =
+        parentItem &&
+        parentItem.classList &&
+        parentItem.classList.contains("has-sub") &&
+        parentItem.querySelector(".subnav");
+
+      // On mobile, tapping "Domain" should only toggle the dropdown,
+      // not close the entire menu drawer.
+      if (isSubmenuTrigger && window.matchMedia("(max-width: 1024px)").matches) {
+        return;
+      }
+
+      if (clickedLink) {
         if (window.matchMedia("(max-width: 1024px)").matches) {
           closeMobileNav();
         }
@@ -124,8 +146,34 @@
     return header ? header.offsetHeight + 10 : 88;
   }
 
+  subMenuParents.forEach(function (item) {
+    var trigger = item.querySelector(":scope > a");
+    if (!trigger) return;
+    trigger.setAttribute("aria-haspopup", "true");
+    trigger.setAttribute("aria-expanded", "false");
+  });
+
   navLinks.forEach(function (link) {
     link.addEventListener("click", function (e) {
+      var parentItem = link.parentElement;
+      var isSubTrigger =
+        parentItem &&
+        parentItem.classList &&
+        parentItem.classList.contains("has-sub") &&
+        parentItem.querySelector(".subnav");
+
+      if (isSubTrigger && window.matchMedia("(max-width: 1024px)").matches) {
+        e.preventDefault();
+        var open = !parentItem.classList.contains("is-open");
+        subMenuParents.forEach(function (item) {
+          if (item !== parentItem) item.classList.remove("is-open");
+          var trigger = item.querySelector(":scope > a");
+          if (trigger) trigger.setAttribute("aria-expanded", item === parentItem && open ? "true" : "false");
+        });
+        parentItem.classList.toggle("is-open", open);
+        return;
+      }
+
       var id = link.getAttribute("href");
       if (!id || id === "#") return;
       var target = document.querySelector(id);
