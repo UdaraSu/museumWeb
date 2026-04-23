@@ -150,13 +150,19 @@ a:hover {
 
 /* Header */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 200;
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid transparent;
   transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+main {
+  padding-top: var(--header-h);
 }
 
 .site-header.is-scrolled {
