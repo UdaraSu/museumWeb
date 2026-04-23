@@ -63,6 +63,9 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -72,6 +75,9 @@ body {
   line-height: 1.65;
   color: var(--text);
   background: var(--bg);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   transition: background-color 0.35s var(--ease-out), color 0.35s var(--ease-out);
 }
 
@@ -114,7 +120,7 @@ a:hover {
 }
 
 .container {
-  width: min(100% - 2.5rem, var(--max));
+  width: min(calc(100% - 2.5rem), var(--max));
   margin-inline: auto;
 }
 
@@ -162,7 +168,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(100% - 2.5rem, var(--max));
+  width: min(calc(100% - 2.5rem), var(--max));
   margin-inline: auto;
   min-height: var(--header-h);
   gap: 1rem;
@@ -403,13 +409,15 @@ a:hover {
   .site-nav {
     position: fixed;
     inset: var(--header-h) 0 0 0;
+    width: 100vw;
+    max-width: 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     background: var(--bg);
     padding: 1.25rem 1.5rem 2rem;
     overflow-y: auto;
-    transform: translateX(100%);
+    transform: translateX(100vw);
     transition: transform 0.4s var(--ease-out);
     border-top: 1px solid var(--line);
   }
