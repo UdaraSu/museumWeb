@@ -2527,6 +2527,39 @@ main {
   }
 }
 
+/* Planning */
+.section-planning {
+  background:
+    radial-gradient(circle at 14% -12%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 52%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-muted) 55%, var(--bg) 100%);
+}
+
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.planning-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.15rem 1.05rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.planning-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: var(--step-1);
+  font-family: var(--font-display);
+}
+
+.planning-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+}
+
 /* Achievements */
 .section-achievements {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-muted) 50%, var(--bg) 100%);
@@ -2744,18 +2777,35 @@ main {
   color: var(--text-muted);
 }
 
+.team-email {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.team-email:hover,
+.team-email:focus-visible {
+  text-decoration: underline;
+}
+
 /* Contact */
 .contact-layout {
   display: grid;
   gap: 2rem;
-  max-width: 52rem;
+  max-width: 74rem;
   margin-inline: auto;
 }
 
 @media (min-width: 900px) {
   .contact-layout {
-    grid-template-columns: 1fr;
-    align-items: start;
+    grid-template-columns: minmax(20rem, 0.82fr) minmax(0, 1.68fr);
+    align-items: stretch;
   }
 }
 
@@ -2784,6 +2834,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
+  min-width: 0;
 }
 
 .contact-form-pro label {
@@ -2794,11 +2845,14 @@ main {
 .contact-form-pro input,
 .contact-form-pro textarea {
   font: inherit;
+  width: 100%;
+  max-width: 100%;
   padding: 0.75rem 0.95rem;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--bg);
   color: var(--text);
+  box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -2844,6 +2898,10 @@ main {
 }
 
 .contact-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1.35rem 1.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
