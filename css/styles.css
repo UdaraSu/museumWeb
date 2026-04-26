@@ -1248,6 +1248,10 @@ main {
 }
 
 /* Objectives */
+.objectives {
+  margin-bottom: clamp(2rem, 4.5vw, 3rem);
+}
+
 .objectives-title {
   font-family: var(--font-display);
   font-size: var(--step-3);
@@ -2527,39 +2531,6 @@ main {
   }
 }
 
-/* Planning */
-.section-planning {
-  background:
-    radial-gradient(circle at 14% -12%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 52%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-muted) 55%, var(--bg) 100%);
-}
-
-.planning-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.planning-card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 1.15rem 1.15rem 1.05rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.planning-card h3 {
-  margin: 0 0 0.45rem;
-  font-size: var(--step-1);
-  font-family: var(--font-display);
-}
-
-.planning-card p {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: var(--step--1);
-}
-
 /* Achievements */
 .section-achievements {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-muted) 50%, var(--bg) 100%);
@@ -2781,12 +2752,15 @@ main {
   position: relative;
   z-index: 1;
   display: inline-block;
+  max-width: 100%;
   margin-top: 0.65rem;
   font-size: var(--step--1);
   font-weight: 600;
   color: var(--accent);
   text-decoration: none;
-  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .team-email:hover,

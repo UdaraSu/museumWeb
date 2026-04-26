@@ -108,51 +108,15 @@
       </div>
     </section>
 
-    <section class="section section-planning" id="planning">
-      <div class="container">
-        <header class="section-header section-header-wide reveal">
-          <p class="section-label">Planning Checklist</p>
-          <div class="section-header-row">
-            <h2>Plan everything before development</h2>
-            <p class="section-intro">
-              This project website is planned around clear goals, a structured local workspace, consistent design rules, stable navigation, and prepared assets before publishing.
-            </p>
-          </div>
-        </header>
-        <div class="planning-grid reveal">
-          <article class="planning-card">
-            <h3>Create goals for the site</h3>
-            <p>Define purpose, target audience, and expected outcomes for reviews, supervision, and external stakeholders.</p>
-          </article>
-          <article class="planning-card">
-            <h3>Organize the site structure</h3>
-            <p>Keep all pages and assets in a local project folder hierarchy to test changes before live deployment.</p>
-          </article>
-          <article class="planning-card">
-            <h3>Create the design</h3>
-            <p>Maintain a consistent visual language across sections with reusable components, spacing, and typography.</p>
-          </article>
-          <article class="planning-card">
-            <h3>Design navigation scheme</h3>
-            <p>Use a persistent top navigation so users can move between key sections and return to top-level content easily.</p>
-          </article>
-          <article class="planning-card">
-            <h3>Plan and gather assets</h3>
-            <p>Prepare images, text, links, and presentation files in advance and keep them organized for quick updates.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-scope" id="domain">
       <div class="container">
         <header class="section-header section-header-wide reveal">
           <p class="section-label">01 — Domain</p>
           <div class="section-header-row">
             <h2>Domain</h2>
-            <p class="section-intro">
+            <!-- <p class="section-intro">
               Museums serve as custodians of memory and meaning. This study asks how digital products can extend that mission—especially for diverse audiences and resource-conscious institutions.
-            </p>
+            </p> -->
           </div>
         </header>
 
@@ -160,17 +124,34 @@
           <div class="card-accent-line" aria-hidden="true"></div>
           <h3>Literature survey</h3>
           <p>
-            Contemporary literature on digital strategy in museums points to mobile interpretation, layered narratives, and optional personalization as drivers of satisfaction and learning. Visitors increasingly expect continuity between discovery online and depth on-site.
+            Digital transformation in museums has focused on improving user engagement and accessibility through interactive technologies. Traditional museum systems rely on static displays and text-based descriptions, which often lead to passive learning and reduced visitor interest. Early solutions such as mobile museum guides and interactive kiosks improved accessibility but lacked personalization and intelligent interaction capabilities [1]-[3].
           </p>
           <p>
-            Work on inclusive design stresses captioned media, logical structure, legible type, and resilient layouts across devices. Lightweight feedback channels allow curatorial teams to refine content with evidence rather than assumption.
+            The introduction of Artificial Intelligence (AI) and Natural Language Processing (NLP) enabled conversational museum guides capable of responding to user queries. However, Large Language Models (LLMs) often produce inaccurate or unverified information, known as hallucination [4]. To address this, Retrieval-Augmented Generation (RAG) has been proposed to ensure responses are grounded in reliable data sources.
+          </p>
+          <p>
+            In addition, AI-based sound narration systems have enhanced storytelling by providing dynamic, context-aware audio explanations, improving user engagement compared to traditional audio guides. Research also highlights the importance of interactive and active learning, showing that user participation significantly improves knowledge retention compared to passive content consumption.
+          </p>
+          <p>
+            Visualization techniques such as map- and timeline-based systems help users explore historical data across spatial and temporal dimensions, but they lack deeper relational understanding between events. To overcome this, graph-based models and Graph Neural Networks (GNNs) have been introduced to represent and analyze relationships between historical entities, enabling more advanced reasoning.
+          </p>
+          <p>
+            Furthermore, advancements in computer vision and generative AI have enabled artifact reconstruction, where damaged artifacts are digitally restored and converted into 3D models for interactive visualization. While these approaches improve user experience, they are typically implemented as standalone systems without integration with conversational or narration features.
+          </p>
+          <p>
+            Overall, existing research demonstrates significant progress in individual areas such as conversational AI, narration, visualization, and reconstruction. However, there remains a lack of integrated, multimodal systems that combine these technologies into a unified platform for immersive and intelligent museum experiences.
           </p>
           <div class="references">
-            <h4>References</h4>
+            <h4>References (IEEE style)</h4>
             <ol>
-              <li>Replace with your first citation (author, title, venue, year).</li>
-              <li>Replace with your second citation.</li>
-              <li>Replace with your third citation.</li>
+              <li>H. P. Othman, C. Petrie, and M. K. Power, "Measuring the usability of a smartphone delivered museum guide," International Journal of Human-Computer Studies, 2010.</li>
+              <li>V. Teslyuk et al., "A mobile museum guide application," 2018.</li>
+              <li>D. Karahoca and A. Karahoca, "Designing an interactive museum guide," Procedia Computer Science, 2011.</li>
+              <li>"Large language model," Wikipedia, 2025.</li>
+              <li>K. I. D. Fonseka, "Museum guide mobile applications development," 2020.</li>
+              <li>B. Kindenberg, "The role of AI in historical simulation design," 2025.</li>
+              <li>"Hello History - Chat with AI generated historical figures," 2025.</li>
+              <li>"SeeMuseums - The world's first AI tour guide," 2025.</li>
             </ol>
           </div>
         </article>
@@ -183,18 +164,33 @@
           <div class="bento-grid">
             <div class="bento-card bento-span-2">
               <span class="bento-icon" aria-hidden="true">◇</span>
-              <h4>Fragmented journeys</h4>
-              <p>Ticketing, wayfinding, and storytelling are often split across tools, producing friction before a visitor ever reaches a gallery.</p>
+              <h4>Lack of integrated multimodal systems</h4>
+              <p>Existing solutions separate conversational AI, narration systems, and artifact reconstruction, creating fragmented user experiences instead of one unified intelligent platform.</p>
             </div>
             <div class="bento-card">
               <span class="bento-icon" aria-hidden="true">◎</span>
-              <h4>Local context</h4>
-              <p>Few published frameworks adapt global UX patterns to regional languages, bandwidth, and staffing realities.</p>
+              <h4>Limited immersive learning</h4>
+              <p>Most systems still rely on text or basic audio and do not provide dynamic AI-driven narration with adaptive storytelling.</p>
             </div>
             <div class="bento-card">
               <span class="bento-icon" aria-hidden="true">▣</span>
-              <h4>Measurable engagement</h4>
-              <p>Institutions need ethical, practical signals about which stories land—beyond raw download counts.</p>
+              <h4>Weak reconstruction support</h4>
+              <p>3D reconstruction for damaged or incomplete artifacts is rarely integrated into mainstream museum guidance systems.</p>
+            </div>
+            <div class="bento-card">
+              <span class="bento-icon" aria-hidden="true">◉</span>
+              <h4>LLM accuracy concerns</h4>
+              <p>Conversational agents can produce hallucinated or unverified historical content when grounded retrieval is not enforced.</p>
+            </div>
+            <div class="bento-card">
+              <span class="bento-icon" aria-hidden="true">◌</span>
+              <h4>Fragmented cultural knowledge</h4>
+              <p>Historical data is often scattered across unstructured sources, limiting relational exploration and context-aware reasoning.</p>
+            </div>
+            <div class="bento-card">
+              <span class="bento-icon" aria-hidden="true">✦</span>
+              <h4>Lack of persona interaction</h4>
+              <p>Few platforms support historical persona-based interaction to create deeper, immersive engagement for visitors.</p>
             </div>
           </div>
         </div>
@@ -203,10 +199,10 @@
           <div class="card-accent-line" aria-hidden="true"></div>
           <h3>Research problem &amp; solution</h3>
           <p class="problem-statement">
-            <strong>How might we design a digital companion that improves discovery, accessibility, and engagement for museum visitors?</strong>
+            <strong>How can we design and develop an AI-powered interactive museum system that integrates conversational guidance, AI-driven sound narration, and 3D artifact reconstruction to provide an accurate, immersive, and context-aware cultural heritage experience?</strong>
           </p>
           <p>
-            <strong>Proposed solution:</strong> A standards-minded web experience for exhibit discovery, optional guided paths, accessible summaries, and shareable highlights—optimized for visitors’ own devices and extendable with lightweight curator workflows.
+            <strong>Proposed solution:</strong> Build a multimodal museum platform that combines RAG-based conversational guidance, AI narration, persona interaction, and artifact reconstruction in one integrated user journey.
           </p>
         </article>
 
@@ -228,33 +224,48 @@
         <div class="objectives reveal" id="objectives">
           <p class="section-label">03 — Aims</p>
           <h3 class="objectives-title">Research objectives</h3>
+          <p class="section-intro">Main objective: develop an AI-powered multimodal museum system that improves engagement through conversational interaction, intelligent narration, and immersive artifact visualization.</p>
           <ol class="objective-list">
             <li>
               <span class="obj-num">01</span>
               <div>
-                <strong>Visitor discovery</strong>
-                <p>Support intuitive exploration of exhibitions with narratives that scale from skim to deep read.</p>
+                <strong>Accurate conversational retrieval</strong>
+                <p>Implement a RAG-based conversational system that retrieves and serves grounded museum knowledge.</p>
               </div>
             </li>
             <li>
               <span class="obj-num">02</span>
               <div>
-                <strong>Accessibility</strong>
-                <p>Align interface and content patterns with WCAG-oriented practice and real-device testing.</p>
+                <strong>AI-driven sound narration</strong>
+                <p>Develop a dynamic narration pipeline that adapts storytelling based on user context and artifact data.</p>
               </div>
             </li>
             <li>
               <span class="obj-num">03</span>
               <div>
-                <strong>Engagement</strong>
-                <p>Capture interaction signals that help educators and curators prioritize future work.</p>
+                <strong>3D artifact reconstruction</strong>
+                <p>Enable reconstruction of damaged artifacts and present interactive 3D visualization outputs.</p>
               </div>
             </li>
             <li>
               <span class="obj-num">04</span>
               <div>
-                <strong>Validation</strong>
-                <p>Evaluate the prototype with representative users and supervision-aligned criteria.</p>
+                <strong>Historical persona interaction</strong>
+                <p>Provide persona-based conversational experiences that increase immersion and contextual learning.</p>
+              </div>
+            </li>
+            <li>
+              <span class="obj-num">05</span>
+              <div>
+                <strong>Multilingual communication</strong>
+                <p>Support language diversity so a broader audience can access cultural content effectively.</p>
+              </div>
+            </li>
+            <li>
+              <span class="obj-num">06</span>
+              <div>
+                <strong>Scalable real-time system behavior</strong>
+                <p>Ensure low-latency response and architecture scalability for real-world museum deployments.</p>
               </div>
             </li>
           </ol>
@@ -264,7 +275,19 @@
           <div class="card-accent-line" aria-hidden="true"></div>
           <h3>Methodology</h3>
           <p>
-            The study proceeds through contextual inquiry, iterative prototyping, implementation, and structured evaluation. Architecture typically spans a content layer, presentation layer, and optional services for search or telemetry—adapt this paragraph to your approved design.
+            The system is designed as a multimodal AI-powered museum platform with three main modules: (1) Conversational AI Guide with artifact and persona modes, (2) AI-based Sound Narration, and (3) 3D Artifact Reconstruction.
+          </p>
+          <p>
+            <strong>AI-based narration pipeline:</strong> user query and artifact context are matched against retrieved knowledge, then transformed into dynamic responses and audio output using TTS-based narration components.
+          </p>
+          <p>
+            <strong>Reconstruction pipeline:</strong> artifact selection (including QR-triggered entry), image capture, AI-based 2D restoration, conversion to interactive 3D (.glb), and user-facing visualization.
+          </p>
+          <p>
+            <strong>Conversational retrieval:</strong> RAG architecture combines semantic search and GPT-based response generation to reduce hallucination and keep answers grounded.
+          </p>
+          <p>
+            <strong>Data and session flow:</strong> data is authored through CMS workflows, stored in MongoDB, embedded into Qdrant for retrieval, and served with session-aware conversation memory for continuous interaction.
           </p>
           <figure class="figure-placeholder">
             <img
@@ -451,7 +474,7 @@
           <p class="section-label">04 — Plan</p>
           <div class="section-header-row">
             <h2>Milestones</h2>
-            <p class="section-intro">Assessment-aligned checkpoints—update dates and weightings to match your program handbook.</p>
+            <!-- <p class="section-intro">Assessment-aligned checkpoints—update dates and weightings to match your program handbook.</p> -->
           </div>
         </header>
         <div class="milestone-flow reveal" role="region" aria-label="Milestone timeline">
@@ -559,7 +582,7 @@
           <p class="section-label">05 — Outputs</p>
           <div class="section-header-row">
             <h2>Documents</h2>
-            <p class="section-intro">Provide links for produced and pending documents so reviewers can access each submission quickly.</p>
+            <!-- <p class="section-intro">Provide links for produced and pending documents so reviewers can access each submission quickly.</p> -->
           </div>
         </header>
         <div class="download-grid">
@@ -613,7 +636,7 @@
           <p class="section-label">06 — Presentations</p>
           <div class="section-header-row">
             <h2>Slides of past presentations</h2>
-            <p class="section-intro">Keep links for past slides and placeholders for future updates.</p>
+            <!-- <p class="section-intro">Keep links for past slides and placeholders for future updates.</p> -->
           </div>
         </header>
         <div class="download-grid">
@@ -659,7 +682,7 @@
           <p class="section-label">07 — People</p>
           <div class="section-header-row">
             <h2>About us</h2>
-            <p class="section-intro">Group members with photographs, contact emails, and relevant achievements.</p>
+            <!-- <p class="section-intro">Group members with photographs, contact emails, and relevant achievements.</p> -->
           </div>
         </header>
         <div class="team-layout">
@@ -682,7 +705,7 @@
               <p class="role">Supervisor</p>
               <p class="affil">Sri Lanka Institute of Information Technology (SLIIT)</p>
               <p class="team-link">Department of Software Engineering</p>
-              <a class="team-email" href="mailto:nuwan.kodagoda@sliit.lk">nuwan.kodagoda@sliit.lk</a>
+              <a class="team-email" href="mailto:nuwan.k@sliit.lk">nuwan.k@sliit.lk</a>
             </article>
             <article class="team-card-pro reveal" role="listitem">
               <div class="team-card-glow" aria-hidden="true"></div>
@@ -702,7 +725,7 @@
               <p class="role">Co-supervisor</p>
               <p class="affil">Sri Lanka Institute of Information Technology (SLIIT)</p>
               <p class="team-link">Department of Information Technology</p>
-              <a class="team-email" href="mailto:nushkan.nismi@sliit.lk">nushkan.nismi@sliit.lk</a>
+              <a class="team-email" href="mailto:nushkan.n@sliit.lk">nushkan.n@sliit.lk</a>
             </article>
             <article class="team-card-pro reveal" role="listitem">
               <div class="team-card-glow" aria-hidden="true"></div>
@@ -722,7 +745,7 @@
               <p class="role">External supervisor</p>
               <p class="affil">Museum Superintendent</p>
               <p class="team-link">Colombo National Museum</p>
-              <a class="team-email" href="mailto:external.supervisor@museum.lk">external.supervisor@museum.lk</a>
+              <a class="team-email" href="mailto:sanjeewaniwdyarathne@gmail.com">sanjeewaniwdyarathne@gmail.com</a>
             </article>
           </div>
           <div class="team-row team-row--members" role="list">
@@ -744,7 +767,7 @@
               <p class="role">Leader</p>
               <p class="affil">Sri Lanka Institute of Information Technology (SLIIT)</p>
               <p class="team-link">Department of Software Engineering</p>
-              <a class="team-email" href="mailto:ad.obeyesekere@my.sliit.lk">ad.obeyesekere@my.sliit.lk</a>
+              <a class="team-email" href="mailto:Avindiobeyesekere1@gmail.com">Avindiobeyesekere1@gmail.com</a>
             </article>
             <article class="team-card-pro reveal" role="listitem">
               <div class="team-card-glow" aria-hidden="true"></div>
@@ -764,7 +787,7 @@
               <p class="role">Member</p>
               <p class="affil">Sri Lanka Institute of Information Technology (SLIIT)</p>
               <p class="team-link">Department of Software Engineering</p>
-              <a class="team-email" href="mailto:mrbs.bandara@my.sliit.lk">mrbs.bandara@my.sliit.lk</a>
+              <a class="team-email" href="mailto:sharshithab2021@gmail.com">sharshithab2021@gmail.com</a>
             </article>
             <article class="team-card-pro reveal" role="listitem">
               <div class="team-card-glow" aria-hidden="true"></div>
@@ -784,7 +807,7 @@
               <p class="role">Member</p>
               <p class="affil">Sri Lanka Institute of Information Technology (SLIIT)</p>
               <p class="team-link">Department of Software Engineering</p>
-              <a class="team-email" href="mailto:pu.ireshan@my.sliit.lk">pu.ireshan@my.sliit.lk</a>
+              <a class="team-email" href="mailto:udaraireshan@gmail.com">udaraireshan@gmail.com</a>
             </article>
             <article class="team-card-pro reveal" role="listitem">
               <div class="team-card-glow" aria-hidden="true"></div>
@@ -817,7 +840,7 @@
           <p class="section-label">08 — Connect</p>
           <div class="section-header-row">
             <h2>Contact us</h2>
-            <p class="section-intro">Collaborators, reviewers, and museums—reach the team directly.</p>
+            <!-- <p class="section-intro">Collaborators, reviewers, and museums—reach the team directly.</p> -->
           </div>
         </header>
         <div class="contact-layout reveal">
